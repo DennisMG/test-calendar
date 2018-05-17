@@ -7,10 +7,10 @@ const InputComponent = (props) => {
 	return(
 		<div className="InputComponent">
 			<div>
-				Start Date: <input type="text" onChange={props.changed} value={props.name}/>
+				Start Date: <input type="text" onChange={props.onStartDateChanged}/>
 			</div>
 			<div>
-				Number of days: <input type="text" onChange={props.changed} value={props.name}/>
+				Number of days: <input type="number" onChange={props.onNumberOfDaysChanged}/>
 			</div>
 			<div>
 				Country Code: <input type="text" onChange={props.changed} value={props.name}/>

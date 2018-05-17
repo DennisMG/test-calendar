@@ -1,5 +1,25 @@
 .Month{
 	border: 1px solid #FFA07A;
-	padding: 16px;
+	padding: 0px;
 	text-align: center;
+	display: inline-block;
+}
+
+.day-label{
+	width: 15px;
+	height: 15px;
+	padding: 10px;
+	text-align: center;
+	display: block;
+}
+
+.days-header{
+	display: inline-flex;
+}
+
+.month-name{
+	text-align: center;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	background-color: #99CC66;
 }
