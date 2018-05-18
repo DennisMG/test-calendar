@@ -1,6 +1,5 @@
 import React from 'react';
 import SingleMonth from '../Month/Month'
-import * as Helper from '../Helpers/Helper';
 import * as MonthFactory from './MonthFactory'
 import './RangeCalendar.css'
  
