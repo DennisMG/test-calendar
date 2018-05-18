@@ -24,10 +24,8 @@ const RangeCalendar = (props) => {
 	let splitDaysByMonth = (totalDays, startDate) => {
 		let startingMonth = startDate.getMonth()
 		let startingDate = props.startDate.getDate()
-		console.log("startingDate: ", startingDate)
-		console.log("startingMonth: ", startingMonth);
-		let secondDate = Helper.addDays(startDate, totalDays);
-		let diff = monthDifference(startDate, secondDate)
+		let secondDate = Helper.addDays(startDate, totalDays-1);
+		let diff = monthDifference(startDate, secondDate) 
 		
 		let calendarArray = [{
 			month: startingMonth,
@@ -43,14 +41,14 @@ const RangeCalendar = (props) => {
 					month: secondDate.getMonth(),
 					year: secondDate.getFullYear(),
 					starting: 1,
-					ending: secondDate.getDate()
+					ending: secondDate.getDate() + 1
 				}
 			}else{
 				monthMeta = {
 					month: startingMonth + i,
 					year: startDate.getFullYear(),
 					starting: 1,
-					ending: Helper.calculateDaysInMonth( i + startingMonth, startDate.getFullYear())
+					ending: Helper.calculateDaysInMonth( i + startingMonth, startDate.getFullYear()) + 1
 				}
 
 			}
