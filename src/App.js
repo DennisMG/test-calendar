@@ -17,7 +17,7 @@ class App extends Component {
   }
 
   onNumberOfDaysChanged = (event) => {
-    this.setState({numberOfDays: parseInt(event.target.value)});
+    this.setState({numberOfDays: parseInt(event.target.value,10)});
   }
 
   render() {

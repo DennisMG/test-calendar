@@ -6,8 +6,6 @@ import './RangeCalendar.css'
  
 const RangeCalendar = (props) => {
 
-	let daysCount = props.numberOfDays;
-
 	const monthDifference = (date1, date2) => {
 	    var year1 = date1.getFullYear();
 		var year2 = date2.getFullYear();
