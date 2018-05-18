@@ -19,7 +19,7 @@ const Month = (props) => {
 	
 	const renderCalendarNumbers = (month, year, start, end) => {
 		let calendarNumbers = []
-	console.log("hello")
+
 		let daysInMonth = Helper.calculateDaysInMonth(month, year);		
 		
 		let firstDayOfMonth = new Date(year, month).getDay()

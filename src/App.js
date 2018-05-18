@@ -7,8 +7,8 @@ import * as Helper from './Helpers/Helper';
 
 class App extends Component {
   state = {
-    startDate: new Date('05/29/2018'),
-    numberOfDays: 1
+    startDate: new Date('12/30/2018'),
+    numberOfDays: 80
   }
 
   onStartDateChanged = (event) => {
