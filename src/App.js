@@ -6,8 +6,8 @@ import RangeCalendar from './RangeCalendar/RangeCalendar'
 
 class App extends Component {
   state = {
-    startDate: new Date('05/17/2018'),
-    numberOfDays: 0
+    startDate: new Date('05/01/2018'),
+    numberOfDays: 1
   }
 
   onStartDateChanged = (event) => {
@@ -15,7 +15,7 @@ class App extends Component {
   }
 
   onNumberOfDaysChanged = (event) => {
-    this.setState({numberOfDays: event.target.value});
+    this.setState({numberOfDays: parseInt(event.target.value)});
   }
 
   render() {
@@ -30,7 +30,8 @@ class App extends Component {
             onStartDateChanged={this.onStartDateChanged} 
             onNumberOfDaysChanged={this.onNumberOfDaysChanged} 
             startDate={this.state.startDate}/>
-          <RangeCalendar startDate={this.state.startDate} 
+          <RangeCalendar 
+            startDate={this.state.startDate} 
             numberOfDays={this.state.numberOfDays}/>
         </div>
       </div>

@@ -9,7 +9,6 @@ const RangeCalendar = (props) => {
 	let daysCount = props.numberOfDays;
 
 	
-
 	return(
 		<div>
 			{
@@ -19,7 +18,7 @@ const RangeCalendar = (props) => {
 				month={props.startDate.getMonth()} 
 				year={props.startDate.getFullYear()}
 				start={props.startDate.getDate()}
-				end={14}/>
+				end={props.numberOfDays}/>
 		</div>
 		:
 		<div/>

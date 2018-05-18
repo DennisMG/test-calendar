@@ -24,22 +24,24 @@ const Month = (props) => {
 		
 		let firstDayOfMonth = new Date(year, month)
 		
-		for(let invalidDate = 0; invalidDate < firstDayOfMonth.getDay(); invalidDate++){
-			calendarNumbers.push(<DayComponent day={-1}/>)
+		for(let invalidDate = 0; invalidDate < start; invalidDate++){
+			calendarNumbers.push(<DayComponent hidden={true}/>)
 		}
 
-		for(let hiddenDate = 1; hiddenDate < start; hiddenDate++){
-			calendarNumbers.push(<DayComponent day={-1}/>)
-		}
-		
 		let _day = start;
-		while( _day <= daysInMonth){
+		while( _day < start + end){
+			if(_day > daysInMonth) break;
 			calendarNumbers.push(<DayComponent day={_day}/>)
 			_day++;
 		}
 
+		for(let hiddenDateAfter = start + end; hiddenDateAfter < daysInMonth; hiddenDateAfter++){
+			calendarNumbers.push(<DayComponent hidden={true}/>)
+		}
+
 		return calendarNumbers
 	}
+	
 
 	return(
 		<div className="Month">

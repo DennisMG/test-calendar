@@ -4,7 +4,7 @@ import './Day.css'
 
 const day = (props) => {
 	return(
-		props.day !== -1 ?
+		!props.hidden ?
 		<div className="date">
 			{props.day}
 		</div>
