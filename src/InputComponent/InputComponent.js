@@ -15,7 +15,8 @@ const InputComponent = (props) => {
 				Number of days: <input 
 								  type="number" 
 								  onChange={props.onNumberOfDaysChanged}
-								  min="1"/>
+								  min="1"
+								  value={props.numberOfDays}/>
 			</div>
 			<div>
 				Country Code: <input 

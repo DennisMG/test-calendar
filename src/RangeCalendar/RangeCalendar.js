@@ -26,8 +26,8 @@ const RangeCalendar = (props) => {
 		let startingDate = props.startDate.getDate()
 		let endDate = Helper.addDays(startDate, totalDays-1);
 		let diff = monthDifference(startDate, endDate) 
-		let currentYear;
-		
+		let currentYear = startDate.getFullYear();
+		let currentMonthCounter = startingMonth;
 		let calendarArray = [{
 			month: startingMonth,
 			year: startDate.getFullYear(),
@@ -45,15 +45,21 @@ const RangeCalendar = (props) => {
 					ending: endDate.getDate() + 1
 				}
 			}else{
-				currentYear = startDate.getFullYear()
-				console.log("month: ", startDate.getMonth())
-				if(startDate.getMonth() >= 11)
+
+				if(currentMonthCounter >= 11)
 					currentYear++;
+				
+				if(currentMonthCounter < 11){
+					currentMonthCounter ++;
+				}else{
+					currentMonthCounter = 0
+				}
+
 				monthMeta = {
-					month: startingMonth + i,
+					month: currentMonthCounter,
 					year: currentYear,
 					starting: 1,
-					ending: Helper.calculateDaysInMonth( i + startingMonth, currentYear) + 1
+					ending: Helper.calculateDaysInMonth( currentMonthCounter, currentYear) + 1
 				}
 
 			}
@@ -61,7 +67,6 @@ const RangeCalendar = (props) => {
 			calendarArray.push(monthMeta);
 			
 		}
-	console.log(calendarArray)
 		return calendarArray;
 
 	}

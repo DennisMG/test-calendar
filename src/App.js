@@ -7,8 +7,8 @@ import * as Helper from './Helpers/Helper';
 
 class App extends Component {
   state = {
-    startDate: new Date('12/30/2018'),
-    numberOfDays: 80
+    startDate: new Date(),
+    numberOfDays: 1
   }
 
   onStartDateChanged = (event) => {
@@ -31,7 +31,8 @@ class App extends Component {
           <InputComponent 
             onStartDateChanged={this.onStartDateChanged} 
             onNumberOfDaysChanged={this.onNumberOfDaysChanged} 
-            startDate={this.state.startDate}/>
+            startDate={this.state.startDate}
+            numberOfDays={this.state.numberOfDays}/>
           <RangeCalendar 
             startDate={this.state.startDate} 
             numberOfDays={this.state.numberOfDays}/>
