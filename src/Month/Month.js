@@ -5,8 +5,8 @@ import DayComponent from '../Day/Day'
 import * as Helper from '../Helpers/Helper';
 
 const Month = (props) => {
-	const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-	const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+	const months = Helper.months
+	const days = Helper.days
 	
 
 	const renderDayLabels = () => {
@@ -19,7 +19,7 @@ const Month = (props) => {
 	
 	const renderCalendarNumbers = (month, year, start, end) => {
 		let calendarNumbers = []
-
+	console.log("hello")
 		let daysInMonth = Helper.calculateDaysInMonth(month, year);		
 		
 		let firstDayOfMonth = new Date(year, month).getDay()
@@ -33,14 +33,14 @@ const Month = (props) => {
 		}
 		
 		let _day = start;
-		while( _day < start + end){
+		while( _day < end){
 			if(_day > daysInMonth) break;
 			var weekday = new Date(year,month,_day).getDay()
 			calendarNumbers.push(<DayComponent day={_day} letter={days[weekday][0]}/>)
 			_day++;
 		}
 
-		for(let hiddenDateAfter = start + end; hiddenDateAfter < daysInMonth; hiddenDateAfter++){
+		for(let hiddenDateAfter = end; hiddenDateAfter < daysInMonth; hiddenDateAfter++){
 
 			calendarNumbers.push(<DayComponent hidden={true}/>)
 		}

@@ -7,7 +7,7 @@ import * as Helper from './Helpers/Helper';
 
 class App extends Component {
   state = {
-    startDate: new Date('05/01/2018'),
+    startDate: new Date('05/02/2018'),
     numberOfDays: 1
   }
 

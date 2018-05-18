@@ -1,6 +1,7 @@
 .Month{
 	border: 1px solid #FFA07A;
 	padding: 0px;
+	margin: 5px;
 	text-align: center;
 	display: inline-block;
 	width: 245px;
