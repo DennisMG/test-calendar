@@ -3,14 +3,22 @@ import React from 'react';
 import './Day.css'
 
 const day = (props) => {
-	return(
-		!props.hidden ?
-		<div className="date">
+	
+	
+	let weekendClass = '';
+	if(props.letter === 'S') weekendClass = 'weekend';
+	
+	let day = (
+		<div className={'date' + ' ' + weekendClass}>
 			{props.day}
-		</div>
-		:
-		<div className="hidden-date"></div>
-	) 
+		</div>)
+
+	if(props.hidden){
+		day = <div className="hidden-date"/>
+	}
+
+
+	return day
 }
 
 export default day;

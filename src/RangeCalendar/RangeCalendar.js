@@ -8,21 +8,23 @@ const RangeCalendar = (props) => {
 
 	let daysCount = props.numberOfDays;
 
-	
+	let view = <view/>
+
+	if(props.startDate){
+		view = (
+			<div className="RangeCalendar">
+				<SingleMonth 
+					month={props.startDate.getMonth()} 
+					year={props.startDate.getFullYear()}
+					start={props.startDate.getDate()}
+					end={props.numberOfDays}/>
+			</div>
+		)
+
+	}
 	return(
 		<div>
-			{
-		props.startDate ? 
-		<div className="RangeCalendar">
-			<SingleMonth 
-				month={props.startDate.getMonth()} 
-				year={props.startDate.getFullYear()}
-				start={props.startDate.getDate()}
-				end={props.numberOfDays}/>
-		</div>
-		:
-		<div/>
-	}
+			{ view }
 		</div>
 	
 		

@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import InputComponent from './InputComponent/InputComponent'
 import RangeCalendar from './RangeCalendar/RangeCalendar'
+import * as Helper from './Helpers/Helper';
 
 class App extends Component {
   state = {
@@ -11,7 +12,8 @@ class App extends Component {
   }
 
   onStartDateChanged = (event) => {
-    this.setState({startDate: new Date(event.target.value)});
+    var newDate = Helper.addDays(new Date(event.target.value), 1)
+    this.setState({ startDate: newDate });
   }
 
   onNumberOfDaysChanged = (event) => {

@@ -8,14 +8,14 @@ const InputComponent = (props) => {
 		<div className="InputComponent">
 			<div>
 				Start Date: <input 
-								type="text" 
-								placeholder="05/18/2018" 
+								type="date" 
 								onChange={props.onStartDateChanged}/>
 			</div>
 			<div>
 				Number of days: <input 
 								  type="number" 
-								  onChange={props.onNumberOfDaysChanged}/>
+								  onChange={props.onNumberOfDaysChanged}
+								  min="1"/>
 			</div>
 			<div>
 				Country Code: <input 
