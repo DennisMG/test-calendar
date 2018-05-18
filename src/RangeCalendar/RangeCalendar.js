@@ -1,17 +1,23 @@
 import React from 'react';
 import SingleMonth from '../Month/Month'
+import * as Helper from '../Helpers/Helper';
 
 import './RangeCalendar.css'
  
 const RangeCalendar = (props) => {
 
-	var daysCount = props.numberOfDays;
+	let daysCount = props.numberOfDays;
 
 
 
 	return(
 		<div className="RangeCalendar">
-			<SingleMonth month={0} year={2018}/>
+			<SingleMonth 
+				startDate={props.startDate}
+				month={props.startDate.getMonth()} 
+				year={props.startDate.getFullYear()}
+				start={props.startDate.getDate()}
+				end={14}/>
 		</div>
 	) 
 }

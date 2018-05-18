@@ -3,6 +3,7 @@
 	padding: 0px;
 	text-align: center;
 	display: inline-block;
+	width: 245px;
 }
 
 .day-label{
@@ -22,4 +23,9 @@
 	padding-bottom: 10px;
 	padding-top: 10px;
 	background-color: #99CC66;
+}
+
+.calendar-days-container{
+	display: grid;
+	grid-template-columns: auto auto auto auto auto auto auto;
 }

@@ -7,7 +7,7 @@ const InputComponent = (props) => {
 	return(
 		<div className="InputComponent">
 			<div>
-				Start Date: <input type="text" onChange={props.onStartDateChanged}/>
+				Start Date: <input type="text" placeholder="05/18/2018" onChange={props.onStartDateChanged}/>
 			</div>
 			<div>
 				Number of days: <input type="number" onChange={props.onNumberOfDaysChanged}/>
