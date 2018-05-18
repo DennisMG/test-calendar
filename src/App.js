@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import InputComponent from './InputComponent/InputComponent'
 import RangeCalendar from './RangeCalendar/RangeCalendar'
@@ -24,7 +23,6 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Calendar Application</h1>
         </header>
         <div className="App-intro">
