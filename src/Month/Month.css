@@ -28,4 +28,5 @@
 .calendar-days-container{
 	display: grid;
 	grid-template-columns: auto auto auto auto auto auto auto;
+	background-color: lightgrey;
 }

@@ -1,4 +1,4 @@
-.Day{
+.date{
 	width: 15px;
 	height: 15px;
 	padding: 10px;
@@ -8,4 +8,18 @@
 	padding: 10px;
 	text-align: center;
 	display: block;
+	background-color: white;
+}
+
+.hidden-date{
+	width: 15px;
+	height: 15px;
+	padding: 10px;
+	text-align: center;
+	width: 15px;
+	height: 15px;
+	padding: 10px;
+	text-align: center;
+	display: block;
+	background-color: lightgrey;
 }

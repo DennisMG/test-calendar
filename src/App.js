@@ -6,7 +6,7 @@ import RangeCalendar from './RangeCalendar/RangeCalendar'
 
 class App extends Component {
   state = {
-    startDate: new Date(),
+    startDate: new Date('05/17/2018'),
     numberOfDays: 0
   }
 
@@ -26,8 +26,12 @@ class App extends Component {
           <h1 className="App-title">Calendar Application</h1>
         </header>
         <div className="App-intro">
-          <InputComponent onStartDateChanged={this.onStartDateChanged} onNumberOfDaysChanged={this.onNumberOfDaysChanged}/>
-          <RangeCalendar startDate={this.state.startDate} numberOfDays={this.state.numberOfDays}/>
+          <InputComponent 
+            onStartDateChanged={this.onStartDateChanged} 
+            onNumberOfDaysChanged={this.onNumberOfDaysChanged} 
+            startDate={this.state.startDate}/>
+          <RangeCalendar startDate={this.state.startDate} 
+            numberOfDays={this.state.numberOfDays}/>
         </div>
       </div>
     );

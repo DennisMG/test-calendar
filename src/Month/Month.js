@@ -17,23 +17,25 @@ const Month = (props) => {
 		})
 	}
 	
-	const renderCalendarNumbers = (month, year) => {
+	const renderCalendarNumbers = (month, year, start, end) => {
 		let calendarNumbers = []
-		let daysInMonth = Helper.calculateDaysInMonth(month, year);
 
-		let _day = 1;
-		while( _day <= daysInMonth){
-			if(days[_day] ===  days[props.startDate.getDate()]){
-				calendarNumbers.push(<DayComponent day={-1}/>)
-				console.log("print")
-				continue;
-			}
-			calendarNumbers.push(<DayComponent day={_day}/>)
-			_day++;
+		let daysInMonth = Helper.calculateDaysInMonth(month, year);		
+		
+		let firstDayOfMonth = new Date(year, month)
+		
+		for(let invalidDate = 0; invalidDate < firstDayOfMonth.getDay(); invalidDate++){
+			calendarNumbers.push(<DayComponent day={-1}/>)
 		}
 
-		for (let i = 1; i <= daysInMonth; i++) {
-			
+		for(let hiddenDate = 1; hiddenDate < start; hiddenDate++){
+			calendarNumbers.push(<DayComponent day={-1}/>)
+		}
+		
+		let _day = start;
+		while( _day <= daysInMonth){
+			calendarNumbers.push(<DayComponent day={_day}/>)
+			_day++;
 		}
 
 		return calendarNumbers
@@ -48,7 +50,7 @@ const Month = (props) => {
 				{ months[props.month]} {props.year}
 			</div>
 			<div className="calendar-days-container">
-				{renderCalendarNumbers(props.month, props.year)}
+				{renderCalendarNumbers(props.month, props.year, props.start, props.end)}
 			</div>
 		</div>
 	) 
